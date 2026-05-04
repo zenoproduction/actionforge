@@ -1,0 +1,66 @@
+{
+  "name": "actionforge",
+  "display_name": "ActionForge",
+  "version": "1.0.0",
+  "description": "Turn vague ideas into executable plans. Supports dev, product, startup, debug, AI, and Jira modes.",
+  "tagline": "Turn vague ideas into executable plans.",
+  "entry": ".claude/skills/actionforge/SKILL.md",
+  "triggers": [
+    "/actionforge",
+    "/af",
+    "/forge"
+  ],
+  "modes": [
+    {
+      "name": "dev",
+      "description": "Architecture, files, implementation steps, edge cases"
+    },
+    {
+      "name": "product",
+      "description": "User stories, acceptance criteria, prioritization, success metrics"
+    },
+    {
+      "name": "startup",
+      "description": "Market, MVP scope, validation, monetization, first customers"
+    },
+    {
+      "name": "debug",
+      "description": "Hypotheses, reproduction, diagnostic checks, fixes"
+    },
+    {
+      "name": "ai",
+      "description": "Model role, prompt architecture, evaluation, failure modes"
+    },
+    {
+      "name": "jira",
+      "description": "Jira-ready issues with all fields, acceptance criteria, sub-tasks"
+    }
+  ],
+  "templates": [
+    "task-breakdown",
+    "project-plan",
+    "feature-spec",
+    "debugging-flow",
+    "jira-task",
+    "mvp-plan"
+  ],
+  "author": {
+    "name": "Marco Venturelli",
+    "email": "info@marcoventurelli.com",
+    "url": "https://github.com/zenoproduction"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/zenoproduction/actionforge",
+  "homepage": "https://github.com/zenoproduction/actionforge",
+  "category": "productivity",
+  "tags": [
+    "planning",
+    "execution",
+    "task-breakdown",
+    "project-management",
+    "debugging",
+    "jira",
+    "mvp",
+    "ai-product"
+  ]
+}

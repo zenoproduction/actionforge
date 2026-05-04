@@ -1,0 +1,51 @@
+{
+  "name": "@actionforge/claude-skill",
+  "version": "1.0.0",
+  "description": "A Claude Code skill/plugin that turns vague ideas, tasks, bugs, and product concepts into structured execution plans.",
+  "main": "cli/install.js",
+  "bin": {
+    "actionforge-install": "cli/install.js"
+  },
+  "scripts": {
+    "install-skill": "node cli/install.js install",
+    "uninstall-skill": "node cli/install.js uninstall",
+    "postinstall": "node cli/install.js install"
+  },
+  "files": [
+    "cli/",
+    ".claude/skills/actionforge/",
+    "skill.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "claude-skill",
+    "claude-plugin",
+    "actionforge",
+    "task-planning",
+    "task-breakdown",
+    "project-planning",
+    "feature-spec",
+    "debugging",
+    "jira",
+    "mvp",
+    "ai-product",
+    "execution",
+    "productivity"
+  ],
+  "author": "Marco Venturelli <info@marcoventurelli.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenoproduction/actionforge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zenoproduction/actionforge/issues"
+  },
+  "homepage": "https://github.com/zenoproduction/actionforge#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

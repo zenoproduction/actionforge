@@ -1,0 +1,52 @@
+{
+  "marketplace": {
+    "name": "ActionForge",
+    "owner": "zenoproduction",
+    "description": "A Claude Code skill/plugin that turns vague ideas, tasks, bugs, and product concepts into structured execution plans.",
+    "homepage": "https://github.com/zenoproduction/actionforge",
+    "category": "productivity",
+    "tags": ["planning", "execution", "task-breakdown", "project-management", "jira", "mvp", "debugging"],
+    "version": "1.0.0",
+    "license": "MIT",
+    "plugins": [
+      {
+        "name": "actionforge",
+        "display_name": "ActionForge",
+        "description": "Turn vague ideas into executable plans. Supports dev, product, startup, debug, AI, and Jira modes.",
+        "author": {
+          "name": "Marco Venturelli",
+          "email": "info@marcoventurelli.com",
+          "url": "https://github.com/zenoproduction"
+        },
+        "source": {
+          "type": "github",
+          "repo": "zenoproduction/actionforge",
+          "path": ".claude/skills/actionforge"
+        },
+        "category": "productivity",
+        "homepage": "https://github.com/zenoproduction/actionforge",
+        "readme": "https://github.com/zenoproduction/actionforge/blob/main/README.md",
+        "skill_entry": ".claude/skills/actionforge/SKILL.md",
+        "modes": [
+          "dev",
+          "product",
+          "startup",
+          "debug",
+          "ai",
+          "jira"
+        ],
+        "keywords": [
+          "planning",
+          "task-breakdown",
+          "project-plan",
+          "feature-spec",
+          "debugging",
+          "jira",
+          "mvp",
+          "ai-product",
+          "execution"
+        ]
+      }
+    ]
+  }
+}
