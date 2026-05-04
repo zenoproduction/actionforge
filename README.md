@@ -6,6 +6,21 @@ A Claude Code skill/plugin that transforms any fuzzy input — an idea, a task, 
 
 ---
 
+## Live Demo
+
+[Open the demo](docs/index.html)
+
+To publish the demo on GitHub Pages:
+
+1. Go to your repository **Settings**
+2. Open **Pages** in the left sidebar
+3. Under **Branch**, select `main` and the `/docs` folder
+4. Click **Save**
+
+The demo will be live at `https://<your-username>.github.io/actionforge/`.
+
+---
+
 ## The problem
 
 Most planning tools help you think. Claude is already good at thinking.

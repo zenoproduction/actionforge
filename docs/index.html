@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ActionForge — Turn vague ideas into executable plans</title>
+  <meta name="description" content="A Claude Code skill/plugin that transforms vague ideas, tasks, bugs, and product concepts into structured, immediately actionable execution plans.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <span class="nav-logo">⚡ ActionForge</span>
+      <div class="nav-links">
+        <a href="#demo">Demo</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/zenoproduction/actionforge" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="badge">Claude Code Skill / Plugin</div>
+      <h1 class="hero-title" id="hero-title">
+        Turn vague ideas into<br>
+        <span class="gradient-text">executable plans.</span>
+      </h1>
+      <p class="hero-desc">
+        ActionForge is a Claude Code skill that transforms any fuzzy input — an idea, a task, a bug, a product concept — into a structured, immediately actionable output you can execute today.
+      </p>
+      <div class="hero-actions">
+        <a href="#install" class="btn btn-primary">Install ActionForge</a>
+        <a href="#demo" class="btn btn-secondary">Try the demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo -->
+  <section class="section" id="demo" aria-labelledby="demo-title">
+    <div class="container">
+      <h2 class="section-title" id="demo-title">Interactive Demo</h2>
+      <p class="section-desc">Type any idea, task, bug, or product concept. Pick a mode. Get a structured plan.</p>
+
+      <div class="demo-card">
+        <!-- Input panel -->
+        <div class="demo-input-area">
+          <label class="demo-label" for="demo-input">Your input</label>
+          <textarea
+            id="demo-input"
+            class="demo-textarea"
+            rows="4"
+            placeholder="Describe your idea, task, bug, or product concept…"
+          >I want to build a SaaS for QR code analytics but I don't know where to start.</textarea>
+
+          <div class="mode-section">
+            <span class="mode-label" id="mode-group-label">Mode</span>
+            <div class="mode-buttons" role="group" aria-labelledby="mode-group-label">
+              <button class="mode-btn active" data-mode="auto" aria-pressed="true">auto</button>
+              <button class="mode-btn" data-mode="dev" aria-pressed="false">dev</button>
+              <button class="mode-btn" data-mode="product" aria-pressed="false">product</button>
+              <button class="mode-btn" data-mode="startup" aria-pressed="false">startup</button>
+              <button class="mode-btn" data-mode="debug" aria-pressed="false">debug</button>
+              <button class="mode-btn" data-mode="ai" aria-pressed="false">ai</button>
+              <button class="mode-btn" data-mode="jira" aria-pressed="false">jira</button>
+            </div>
+          </div>
+
+          <button id="forge-btn" class="btn btn-forge">⚡ Forge Plan</button>
+        </div>
+
+        <!-- Output panel -->
+        <div class="demo-output-area" aria-live="polite" aria-label="Generated plan output">
+          <div class="output-header">
+            <span class="output-title">Output</span>
+            <span class="output-badge" id="output-badge">pick a mode and click Forge Plan</span>
+          </div>
+          <pre class="output-content" id="output-content" tabindex="0"><code id="output-code">Click "Forge Plan" to generate a structured execution plan.</code></pre>
+        </div>
+      </div>
+
+      <p class="demo-note">
+        ⚠ This is a simulated demo with pre-written templates. Real ActionForge runs inside Claude Code and uses Claude AI to generate context-aware plans from your actual project and input.
+      </p>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section-alt" id="how-it-works" aria-labelledby="how-title">
+    <div class="container">
+      <h2 class="section-title" id="how-title">How it works</h2>
+      <p class="section-desc">Three steps from ambiguity to action.</p>
+
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Input anything</h3>
+          <p>Drop in an idea, a task description, a bug report, or a product concept. ActionForge auto-detects the type — no categorization required.</p>
+          <div class="step-example">
+            <code>/actionforge I want to build a SaaS for QR code analytics</code>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Select a mode</h3>
+          <p>Optionally prefix your input with a mode to shape vocabulary and structure for your audience — developer, PM, founder, or Jira team.</p>
+          <div class="step-example">
+            <code>/actionforge /mode startup build a SaaS for invoicing</code>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Act on the output</h3>
+          <p>Receive a structured plan with tasks, acceptance criteria, hypotheses, or Jira issues — ready to copy, assign, and execute immediately.</p>
+          <div class="step-example">
+            <code>→ Scope · Tasks · Criteria · Risks · Assumptions</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <h2 class="section-title" id="features-title">Everything you need to go from fuzzy to focused</h2>
+      <p class="section-desc">Six output types, each tuned for a specific audience and context.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📋</div>
+          <h3>Task Breakdowns</h3>
+          <p>Dependency-ordered task lists with rationale for every step. Each task is executable, not aspirational.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🚀</div>
+          <h3>MVP Plans</h3>
+          <p>Startup-mode plans that lead with the riskiest assumption and a validation method — before you write a line of code.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🎫</div>
+          <h3>Jira-Ready Tasks</h3>
+          <p>Full issue blocks with type, epic, priority, story points, Given/When/Then acceptance criteria, and sub-tasks.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🐛</div>
+          <h3>Debugging Flows</h3>
+          <p>Confidence-ranked hypotheses, reproduction steps, diagnostic checklists, and per-hypothesis fix proposals.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🤖</div>
+          <h3>AI Architecture Plans</h3>
+          <p>Model role definitions, prompt architecture, evaluation rubrics, failure modes, and cost/latency estimates.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🗺️</div>
+          <h3>Product Roadmaps</h3>
+          <p>User stories, MoSCoW prioritization, acceptance criteria, KPIs, and phase-by-phase roadmaps for PMs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mode reference table -->
+  <section class="section section-alt" id="modes" aria-labelledby="modes-title">
+    <div class="container">
+      <h2 class="section-title" id="modes-title">Six modes. One skill.</h2>
+      <p class="section-desc">Each mode adapts vocabulary, structure, and depth for its target audience.</p>
+
+      <div class="modes-table-wrap">
+        <table class="modes-table">
+          <thead>
+            <tr>
+              <th>Mode</th>
+              <th>Audience</th>
+              <th>Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>dev</code></td>
+              <td>Developers</td>
+              <td>Architecture, files, implementation steps, edge cases, tests</td>
+            </tr>
+            <tr>
+              <td><code>product</code></td>
+              <td>Product managers</td>
+              <td>User stories, acceptance criteria, MoSCoW priority, KPIs</td>
+            </tr>
+            <tr>
+              <td><code>startup</code></td>
+              <td>Founders, indie hackers</td>
+              <td>Validation first, MVP scope, monetization, first customers</td>
+            </tr>
+            <tr>
+              <td><code>debug</code></td>
+              <td>Developers</td>
+              <td>Ranked hypotheses, reproduction, diagnostic checks, fixes</td>
+            </tr>
+            <tr>
+              <td><code>ai</code></td>
+              <td>ML engineers</td>
+              <td>Model design, prompt architecture, evaluation, failure modes</td>
+            </tr>
+            <tr>
+              <td><code>jira</code></td>
+              <td>Scrum teams</td>
+              <td>Full Jira issue blocks with all fields and sub-tasks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Install -->
+  <section class="section" id="install" aria-labelledby="install-title">
+    <div class="container">
+      <h2 class="section-title" id="install-title">Get started in 30 seconds</h2>
+      <p class="section-desc">Three installation paths depending on your setup.</p>
+
+      <div class="install-grid">
+        <div class="install-card">
+          <div class="install-badge">Recommended</div>
+          <h3>npm CLI</h3>
+          <p>Install globally and run the automated installer.</p>
+          <div class="code-block">
+            <code>npm install -g @actionforge/claude-skill</code>
+          </div>
+          <p class="install-note">
+            The installer copies the skill to <code>~/.claude/skills/actionforge/</code> automatically.
+          </p>
+        </div>
+
+        <div class="install-card">
+          <h3>Claude Code Marketplace</h3>
+          <p>If available in the plugin marketplace:</p>
+          <div class="code-block">
+            <code>/plugin marketplace add zenoproduction/actionforge</code>
+          </div>
+          <p class="install-note">
+            Browse and install from within Claude Code's plugin interface.
+          </p>
+        </div>
+
+        <div class="install-card">
+          <h3>Manual</h3>
+          <p>Clone and copy the skill directory.</p>
+          <div class="code-block">
+            <code>git clone https://github.com/zenoproduction/actionforge.git
+cp -r actionforge/.claude/skills/actionforge \
+  ~/.claude/skills/actionforge</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="usage-example">
+        <p class="usage-label">Then use it in any Claude Code session:</p>
+        <div class="code-block">
+          <code>/actionforge I want to build a tool that helps developers track which parts of their codebase are tested</code>
+        </div>
+        <div class="code-block" style="margin-top: 0.625rem;">
+          <code>/actionforge /mode jira the checkout flow breaks on mobile when cart has more than 10 items</code>
+        </div>
+        <div class="code-block" style="margin-top: 0.625rem;">
+          <code>/actionforge /mode startup I want to build a SaaS that helps freelancers track invoices</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <span class="nav-logo">⚡ ActionForge</span>
+          <p class="footer-desc">A Claude Code skill/plugin. MIT Licensed. Open source.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="https://github.com/zenoproduction/actionforge" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/zenoproduction/actionforge/issues" target="_blank" rel="noopener noreferrer">Issues</a>
+          <a href="https://github.com/zenoproduction/actionforge/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Changelog</a>
+          <a href="https://github.com/zenoproduction/actionforge/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>
+        </nav>
+      </div>
+      <p class="footer-credit">
+        Created by <a href="https://github.com/zenoproduction" target="_blank" rel="noopener noreferrer">Marco Venturelli</a>
+        · Not affiliated with or endorsed by Anthropic.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
