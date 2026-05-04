@@ -432,7 +432,7 @@ a { color: inherit; }
    ============================================================ */
 .steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
@@ -488,7 +488,7 @@ a { color: inherit; }
    ============================================================ */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.125rem;
 }
 
@@ -593,7 +593,7 @@ a { color: inherit; }
    ============================================================ */
 .install-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.125rem;
   margin-bottom: 1.75rem;
 }
